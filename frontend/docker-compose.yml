@@ -1,0 +1,22 @@
+version: '3'
+services:
+  react-web:
+    #build: . # this syntax to the left wont find our Dockerfile.dev
+    # this syntax below will
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    ports:
+      - "3000:3000"
+    volumes:
+      - /app/node_modules
+      - .:/app
+  # adding a test service to the container.
+  tests:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    volumes:
+      - /app/node_modules
+      - .:/app
+    command: ["npm", "run", "test"]
