@@ -15,7 +15,7 @@ class App extends Component {
             BTW... React says:
           </p>
           <p>
-            Hi There!
+            Hi There! Welcome to React.
           </p>
           <a
             className="App-link"
