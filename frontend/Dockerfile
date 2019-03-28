@@ -3,8 +3,9 @@ FROM node:alpine as builder
 WORKDIR '/app'
 COPY package.json .
 RUN npm install
-COPY . .
+RUN npm audit fix
 #copying all source code into container
+COPY . .
 RUN npm run build
 # The build folder will be created into /app/build in the container
 
