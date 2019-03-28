@@ -1,8 +1,10 @@
-FROM node:alpine as builder # the "builder" is just a name to refer to this phase or block
+FROM node:alpine as builder
+#the "builder" is just a name to refer to this phase or block
 WORKDIR '/app'
 COPY package.json .
 RUN npm install
-COPY . . #copying all source code into container
+COPY . .
+#copying all source code into container
 RUN npm run build
 # The build folder will be created into /app/build in the container
 
