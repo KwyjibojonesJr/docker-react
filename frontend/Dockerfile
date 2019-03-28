@@ -13,6 +13,7 @@ RUN npm run build
 # FROM statements begin the next block. any prior blocks are terminited
 # This block will copy our app with out the dependencies from build above
 FROM nginx
+EXPOSE 80
 # COPY --from=<phase or block name> <item to be copied> <place to copy to in container>
 COPY --from=builder /app/build /usr/share/nginx/html
 # NGINX should start automatically by default.
