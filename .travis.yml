@@ -1,4 +1,4 @@
-language: generic #for issues with travisci thinking the code should be ruby.
+language: generic
 sudo: required
 services:
   - docker
